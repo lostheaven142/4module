@@ -1,0 +1,58 @@
+@import url(http://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=latin,cyrillic);
+
+$fontMain: Arial, sans-serif;
+$fontAlt: 'Cuprum', 'Trebuchet MS', Arial, sans-serif;
+
+// grid
+$columns: 14;
+$column: 60px;
+$gutter: 25px;
+@mixin columns($num) {
+  width: $column * $num + $gutter * $num;
+}
+
+// responsive
+$break-1: 478px;
+$break-2: 768px;
+$break-3: 1024px;
+@mixin respond-to($media) {
+  @if $media == sm {
+    @media only screen and (max-width: $break-1) { @content; }
+  }
+  @if $media == mob {
+    @media only screen and (max-width: $break-2) { @content; }
+  }
+  @if $media == tablet {
+    @media only screen and (max-width: $break-3) { @content; }
+  }
+  @elseif $media == desktop {
+    @media only screen and (min-width: $break-3 + 1) { @content; }
+  }
+}
+
+@mixin retina() {
+  @media
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+      /* Retina-specific stuff here */
+  }
+}
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+.clear {
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}

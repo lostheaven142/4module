@@ -1,8 +1,46 @@
-.wrapper{
-	width: 100%;
-	background: image_url("bg.jpg");
-	background-size: cover;
+body{
+    background: url("/assets/images/1.jpg") no-repeat center;
+    background-size: contain;
+    background-color: #2d4b55;
+    height: 100vh;
+    width: 100%;
+}    
+form{
+    font-size: 30px;
 }
-.screen{
-	height: 300px;
+.name{
+    background: white;
+    width: 500px;
+    height: 50px;
+    border: 15px solid black;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: block;
+    padding: 0 30px;
+    outline: none;
+    color: black;
+}
+.button{
+    width: 300px;
+    height: 30px;
+    background: black;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    border: 15px solid white;
+}
+.ghost{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: url("/assets/images/ghost.png") no-repeat;
+    position: absolute;
+    // top:0;
+    // left:0;
+    opacity:0;
+    // animation: timing 5s infinite;
+    // animation-direction: alternate;
 }
